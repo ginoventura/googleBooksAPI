@@ -6,7 +6,8 @@ render = web.template.render("mvc/")
 
 class Index():
   def GET(self):
-    return render.index()
+    datos = None
+    return render.index(datos)
 
   def POST(self):
     form = web.input()
@@ -15,20 +16,22 @@ class Index():
     result = requests.get("https://www.googleapis.com/books/v1/volumes?q="+book_name)
 
     book = result.json()
-
     items = book["items"]
 
     encoded = json.dumps(items)
     decoded = json.loads(encoded)
 
-    url = decoded[0]["volumeInfo"]["infoLink"]
+    books = []
 
-    link = "<a target='blank' href='"+url+"'>"+book_name+"</a>"
+    for book in decoded:
+      url = decoded[0]["volumeInfo"]["infoLink"]
 
-    return link
+      datos = {
+        "book_name":book_name,
+        "url":url
+      }
+      books.append(datos)
 
-    #print(decoded[0]["volumeInfo"]["title"])
-    #print(decoded[1]["volumeInfo"]["title"])
-    #print(decoded[2]["volumeInfo"]["title"])
-    #print(decoded[3]["volumeInfo"]["title"])
-    #print(decoded[4]["volumeInfo"]["title"])
+    print(books)
+
+    return render.index(books)

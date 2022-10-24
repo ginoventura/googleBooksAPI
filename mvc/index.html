@@ -1,3 +1,5 @@
+$def with(books)
+
 <html>
   <head>
   </head>
@@ -8,4 +10,15 @@
         <button type="submit">Buscar</button>
       </form>
     </body>
+
+    $if books != None:
+      <table>
+        <tr>
+          <th>Enlace al libro</th>
+        </tr>
+        $for book in books:
+        <tr>
+          <td><a target="_blank" href="$book['url']">Enlace al Libro</a></td>
+        </tr>
+      </table>
 </html>
