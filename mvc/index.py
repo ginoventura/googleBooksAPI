@@ -24,10 +24,12 @@ class Index():
     books = []
 
     for book in decoded:
-      url = decoded[0]["volumeInfo"]["infoLink"]
+      url = book["volumeInfo"]["infoLink"]
+      titulo = book["volumeInfo"]["title"]
 
       datos = {
         "book_name":book_name,
+        "titulo":titulo,
         "url":url
       }
       books.append(datos)

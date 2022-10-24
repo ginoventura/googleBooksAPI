@@ -19,11 +19,11 @@ decoded = json.loads(encoded)
 #print(decoded[0]["volumeInfo"])
 
 #Sólo el titulo
-print(decoded[0]["volumeInfo"]["title"])
-print(decoded[1]["volumeInfo"]["title"])
-print(decoded[2]["volumeInfo"]["title"])
-print(decoded[3]["volumeInfo"]["title"])
-print(decoded[4]["volumeInfo"]["title"])
+#print(decoded[0]["volumeInfo"]["title"])
+#print(decoded[1]["volumeInfo"]["title"])
+#print(decoded[2]["volumeInfo"]["title"])
+#print(decoded[3]["volumeInfo"]["title"])
+#print(decoded[4]["volumeInfo"]["title"])
 
 #Enlace al libro
 #print(decoded[0]["volumeInfo"]["infoLink"])
