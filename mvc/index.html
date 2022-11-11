@@ -2,23 +2,83 @@ $def with(books)
 
 <html>
   <head>
+    <title>:. MiUBP .:</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://replit.com/@GinoVentura/googleBooksAPI-1#mvc/stylepagina1.css">
+
+    <style>
+        body {
+            height: 100%;
+            width: 100%;    
+        }
+        .navbar {
+            padding: 1.5%;
+            background-color: rgb(167, 0, 0);
+        }        
+    </style>
   </head>
-    <body>
-      <form method="post">
-        <label>Materia sobre la que se desea obtener libros: </label></br>
-        <input type="text" name="book_name"></input></br>
-        <button type="submit">Buscar</button>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <img src="https://www.ubp.edu.ar/wp-content/uploads/siv/logos/archivos/UBP_H_D_1.png" class="img-responsive" width="350px"">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <a class="navbar-brand" href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2886/2886665.png" alt="" class="d-inline-block align-text-top" width="35px">
+                        Calendario
+                      </a>
+                      <a class="navbar-brand" href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2058/2058625.png" alt="" class="d-inline-block align-text-top" width="35px">
+                        Mis Recordatorios
+                      </a>
+                      <a class="navbar-brand" href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/512/542/542689.png" alt="" class="d-inline-block align-text-top" width="35px">
+                        Mis Mensajes
+                      </a>
+                      <a class="navbar-brand" href="#">
+                        <img src="https://cdn-icons-png.flaticon.com/512/807/807303.png" alt="" class="d-inline-block align-text-top" width="35px">
+                        Herramientas
+                      </a>
+                </ul>
+              </div>
+            </div>
+          </nav>
+  
+    <body class="cuerpo">
+      <form class="libros" method="post">
+        <label>Ingrese la materia o tema sobre lo que se desea obtener libros, reportes, notas, revistas, etc.: </label></br>
+        <input class="inout" type="text" name="book_name"></input></br>
+        <button class="boton" type="submit">Buscar</button>
       </form>
+
+      <style>
+        .libros {
+          margin-top: 45px;
+          margin-left: 25%;
+        }
+        .inout {
+          margin-top: 10px;
+          margin-bottom: 10px; 
+          width: 750px;
+        }
+        .boton {
+          margin-left: 255px;
+          width: 250px;
+        }
+      </style>
     </body>
 
     $if books != None:
-      <table>
+      <table class="tabla" style="margin-left: 25%;">
         <tr>
-          <th>Libros recomendados para la materia:</th>
+          <th class="titulo" style="font-size: 28px;">Bibliografía recomendada para el tema solicitado:</th>
         </tr>
         $for book in books:
         <tr>
-          <td><h5>$book["titulo"]</h5></td>
+          <td>$book["titulo"]</td>
           <td><a target="_blank" href="$book['url']">Enlace al Libro</a></td>
         </tr>
       </table>

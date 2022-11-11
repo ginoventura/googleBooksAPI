@@ -1,0 +1,32 @@
+h1 {
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-left: 2.4rem;
+}
+
+.productos li{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    min-height: 18rem;
+    vertical-align: top;
+    margin: 1%;
+    box-shadow: 7px 4px 17px -4px rgba(0,0,0,0.91);
+}
+
+.producto-descripcion{
+    font-size: 15px;
+    padding-top: 1rem;
+}
+
+.producto-precio{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:10px;
+}
+
+.foto {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
