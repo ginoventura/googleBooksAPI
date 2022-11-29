@@ -1,4 +1,23 @@
 [[package]]
+name = "bardolph"
+version = "0.1.5"
+description = "Simple scripting language for LIFX lights"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+lifxlan = "*"
+
+[[package]]
+name = "bitstring"
+version = "4.0.1"
+description = "Simple construction, analysis and modification of binary data."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "certifi"
 version = "2022.9.24"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -24,6 +43,26 @@ description = "Internationalized Domain Names in Applications (IDNA)"
 category = "main"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "ifaddr"
+version = "0.2.0"
+description = "Cross-platform network interface and IP address enumeration library"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "lifxlan"
+version = "1.2.7"
+description = "API for local communication with LIFX devices over a LAN."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+bitstring = "*"
+ifaddr = "*"
 
 [[package]]
 name = "requests"
@@ -59,11 +98,15 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "4adb06e4b6223623742752ed45dffc1f8380967ddc024ef546311f8a777d070b"
+content-hash = "21c0dcbebef5515f6af17f767c4b134f048be942b7b2d88520bf7c5e3a7b6eb9"
 
 [metadata.files]
+bardolph = []
+bitstring = []
 certifi = []
 charset-normalizer = []
 idna = []
+ifaddr = []
+lifxlan = []
 requests = []
 urllib3 = []
